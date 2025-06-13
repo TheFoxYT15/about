@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syr i Vibe | حول الموقع</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #00ff33; /* تغيير اللون الأساسي إلى أخضر */
+      --secondary: #197d2d; /* أخضر داكن */
+      --dark: #1a1a2e;
+      --darker: #16213e;
+      --light: #f8f9fa;
+      --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+      --warning: #FFC107; /* لون للتحذيرات المهمة */
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Cairo', sans-serif;
+    }
+    
+    body {
+      background: var(--darker);
+      color: var(--light);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    
+    /* التصميم الفاخر للصفحة */
+    .about-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      position: relative;
+    }
+    
+    .about-header {
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+    }
+    
+    .about-header h1 {
+      font-size: 3.5rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 20px;
+      text-shadow: 0 0 20px rgba(76, 175, 80, 0.3);
+    }
+    
+    .about-header p {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    /* قسم محتوى الموقع */
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+    
+    .about-card {
+      flex: 1;
+      min-width: 300px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .about-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(76, 175, 80, 0.2);
+    }
+    
+    .about-card h2 {
+      color: var(--primary);
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .about-card p {
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    
+    .feature-list {
+      list-style-type: none;
+    }
+    
+    .feature-list li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-right: 25px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    .feature-list li::before {
+      content: '✓';
+      color: var(--primary);
+      position: absolute;
+      right: 0;
+    }
+    
+    /* قسم وسائل التواصل */
+    .social-section {
+      text-align: center;
+      margin-top: 60px;
+    }
+    
+    .social-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: var(--light);
+      position: relative;
+      display: inline-block;
+    }
+    
+    .social-section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--gradient);
+      border-radius: 3px;
+    }
+    
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin-top: 40px;
+    }
+    
+    .social-icon {
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .social-icon img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+    
+    .social-icon:hover {
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: 0 10px 20px rgba(76, 175, 80, 0.3);
+      background: rgba(76, 175, 80, 0.2);
+    }
+    
+    /* قسم الشروط والأحكام */
+    .terms-section {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      padding: 40px;
+      margin: 60px auto 0;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      max-width: 900px;
+      text-align: center;
+    }
+    
+    .terms-section h2 {
+      color: var(--primary);
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
+    
+    .terms-section ol {
+      padding-right: 0;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 2;
+      font-size: 1.1rem;
+      display: inline-block;
+      text-align: right;
+    }
+    
+    .terms-section li {
+      margin-bottom: 20px;
+      position: relative;
+      padding-right: 30px;
+    }
+    
+    .terms-section li.important {
+      color: var(--warning);
+      font-weight: bold;
+    }
+    
+    .terms-section li::before {
+      content: '•';
+      color: var(--primary);
+      position: absolute;
+      right: 10px;
+      font-size: 1.5rem;
+    }
+    
+    /* تأثيرات الجسيمات الخلفية */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+    
+    .particle {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      animation: float 15s infinite linear;
+    }
+    
+    @keyframes float {
+      0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.5;
+      }
+      90% {
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateY(-100vh) translateX(100px);
+        opacity: 0;
+      }
+    }
+    
+    /* التكيف مع الشاشات الصغيرة */
+    @media (max-width: 768px) {
+      .about-header h1 {
+        font-size: 2.5rem;
+      }
+      
+      .about-card {
+        min-width: 100%;
+      }
+      
+      .social-icon {
+        width: 60px;
+        height: 60px;
+      }
+      
+      .social-icon img {
+        width: 30px;
+        height: 30px;
+      }
+      
+      .terms-section {
+        padding: 20px;
+      }
+      
+      .terms-section ol {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- جسيمات خلفية متحركة -->
+  <div class="particles" id="particles"></div>
+  
+  <div class="about-container">
+    <header class="about-header">
+      <h1><i class="fas fa-info-circle"></i> حول Syr i Vibe</h1>
+      <p>منصتكم الآمنة لتحميل التطبيقات والألعاب المجانية للكمبيوتر والجوال</p>
+    </header>
+    
+    <div class="about-content">
+      <div class="about-card">
+        <h2><i class="fas fa-shield-alt"></i> لماذا نختلف؟</h2>
+        <ul class="feature-list">
+          <li>جميع التطبيقات والألعاب خالية من الفيروسات</li>
+          <li>فحص دقيق لكل ملف قبل رفعه</li>
+          <li>سرعة تحميل عالية بدون انتظار</li>
+          <li>واجهة سهلة الاستخدام</li>
+          <li>دعم متعدد الأجهزة (كمبيوتر وجوال)</li>
+        </ul>
+      </div>
+      
+      <div class="about-card">
+        <h2><i class="fas fa-download"></i> كيف يعمل الموقع؟</h2>
+        <ol class="feature-list">
+          <li>تصفح التطبيقات أو الألعاب المفضلة لديك</li>
+          <li>تحقق من متطلبات النظام</li>
+          <li>اضغط على زر التحميل</li>
+          <li>استمتع بالتطبيق الآمن على جهازك</li>
+          <li>شاركنا تجربتك من خلال التعليقات</li>
+        </ol>
+      </div>
+      
+      <div class="about-card">
+        <h2><i class="fas fa-gamepad"></i> محتوانا</h2>
+        <ul class="feature-list">
+          <li>أحدث الألعاب المجانية</li>
+          <li>تطبيقات ضرورية لكل مستخدم</li>
+          <li>برامج تحسين الجهاز</li>
+          <li>بثوث مباشرة للألعاب</li>
+          <li>شروحات وتوجيهات تقنية</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="social-section">
+      <h2>تابعنا على وسائل التواصل</h2>
+      <p>كن أول من يعرف عن أحدث التطبيقات والألعاب التي نضيفها</p>
+      
+      <div class="social-icons">
+        <a href="https://www.facebook.com/yourpage" target="_blank" class="social-icon" title="فيسبوك">
+          <img src="https://k.top4top.io/p_345179vz11.png" alt="Facebook">
+        </a>
+        <a href="https://www.youtube.com/yourchannel" target="_blank" class="social-icon" title="يوتيوب">
+          <img src="https://a.top4top.io/p_3451uunop1.png" alt="YouTube">
+        </a>
+        <a href="https://www.tiktok.com/@yourusername" target="_blank" class="social-icon" title="تيك توك">
+          <img src="https://c.top4top.io/p_34519lyiv1.png" alt="TikTok">
+        </a>
+        <a href="https://kick.com/yourusername" target="_blank" class="social-icon" title="كيك">
+          <img src="https://d.top4top.io/p_3451vak8e1.png" alt="Kick">
+        </a>
+        <a href="https://www.instagram.com/yourusername" target="_blank" class="social-icon" title="انستقرام">
+          <img src="https://h.top4top.io/p_34512dk861.png" alt="Instagram">
+        </a>
+      </div>
+    </div>
+    
+    <div class="terms-section">
+      <h2><i class="fas fa-file-contract"></i> الشروط والأحكام</h2>
+      <ol>
+        <li>الموقع يقدم التطبيقات والألعاب لأغراض تعليمية وتجريبية فقط</li>
+        <li>يجب عليك حذف الملفات خلال 24 ساعة إذا كنت لا تملك الرخصة الأصلية</li>
+        <li class="important">نحن غير مسؤولين عن أي استخدام غير قانوني للمحتوى</li>
+        <li>التطبيقات مفحوصة ضد الفيروسات ولكن ننصح بفحصها على جهازك أيضًا</li>
+        <li class="important">جميع المحتويات هي ملك لأصحابها الأصليين ونحن نقدمها للتعريف فقط</li>
+        <li>التعليقات والآراء تعبر عن أصحابها وليس بالضرورة عن إدارة الموقع</li>
+        <li>يحق للإدارة حذف أي حساب يخالف شروط الاستخدام</li>
+        <li class="important">تحميلك لأي محتوى يعني موافقتك على هذه الشروط والأحكام</li>
+        <li>للاستفسارات القانونية يرجى التواصل عبر البريد الإلكتروني الرسمي</li>
+      </ol>
+    </div>
+  </div>
+
+  <script>
+    // إنشاء جسيمات متحركة في الخلفية
+    document.addEventListener('DOMContentLoaded', function() {
+      const particlesContainer = document.getElementById('particles');
+      const colors = ['#4CAF50', '#2E7D32', '#8BC34A', '#CDDC39', '#ffffff'];
+      
+      for (let i = 0; i < 50; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        
+        // خصائص الجسيم
+        const size = Math.random() * 10 + 3;
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.left = `${Math.random() * 100}%`;
+        particle.style.top = `${Math.random() * 100 + 100}%`;
+        particle.style.background = color;
+        particle.style.animationDuration = `${Math.random() * 15 + 10}s`;
+        particle.style.animationDelay = `${Math.random() * 5}s`;
+        
+        particlesContainer.appendChild(particle);
+      }
+    });
+  </script>
+</body>
+</html>
